@@ -31,10 +31,11 @@ footer {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Font sizes */
+/* Font sizes and color */
 
 h1 {
   font-size: 3rem;
+  color: #fff;
 }
 
 p,
@@ -57,10 +58,6 @@ header {
   filter: alpha(opacity=80);
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
   opacity: 0.8;
-}
-
-h1 {
-  color: #fff;
 }
 
 footer {
