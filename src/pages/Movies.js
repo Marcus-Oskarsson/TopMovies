@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { API_URL } from '../reusables/urls';
+import { API_URL } from "../reusables/urls";
 
-import Movie from '../components/Movie';
+import Movie from "../components/Movie";
 
 const Movies = () => {
   const [movieList, setMovieList] = useState([]);
@@ -20,9 +20,11 @@ const Movies = () => {
 
   return (
     <main>
-      {movieList.map((movie) => (
-        <Movie movie={movie} key={movie.id} />
-      ))}
+      <div className='container'>
+        {movieList.map((movie) => (
+          <Movie movie={movie} key={movie.id} />
+        ))}
+      </div>
     </main>
   );
 };

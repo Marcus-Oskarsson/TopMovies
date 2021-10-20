@@ -22,13 +22,13 @@ html {
 h1,
 h2,
 h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 p,
 a,
 footer {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /* Font sizes and color */
@@ -44,12 +44,27 @@ footer {
   font-size: 1.6rem;
 }
 
+.movie-card {
+  position: relative;
+  width: 100%;
+}
+
+.movie-card-text-container {
+  position: absolute;
+}
+
+img {
+  max-width: 100%;
+}
+
 /* Links */
 
 header {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  width: 100%;
   padding: 3em;
   background-color: #000;
   -khtml-opacity: 0.8;
@@ -60,12 +75,30 @@ header {
   opacity: 0.8;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   padding: 3em;
   color: #fff;
   font-size: 2rem;
   background-color: #000;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .movie-card {
+    width: 25%;
+  }
 }
