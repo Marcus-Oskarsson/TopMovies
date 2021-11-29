@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 import { API_URL } from '../reusables/urls';
 
@@ -21,7 +21,7 @@ const Details = () => {
     useEffect(() => {
         fetchMovieDetails();
     }, []);
-
+    console.log(id);
     return (
         <div className='details_background'>
             <BackButton />
