@@ -18,34 +18,50 @@ html {
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: #000;
 }
 
-/* Font families */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
+/* Font families */
 h1,
 h2,
 h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-weight: bold;
 }
 
 p,
 a,
 footer,
-time {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+time,
+span {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /* Font sizes and color */
-h1 {
+h1,
+h2 {
   font-size: 3rem;
+  line-height: 1.4em;
   color: #fff;
 }
 
 p,
 a,
 footer,
-time {
+time,
+span {
   font-size: 1.6rem;
   line-height: 1.4em;
   color: #fff;
@@ -58,15 +74,29 @@ header {
   position: static;
   width: 100%;
   padding: 3em;
-  /* background-color: #000;
-  -khtml-opacity: 0.8;
-  -moz-opacity: 0.8;
-  -ms-filter: ”alpha(opacity=80) ”;
-  filter: alpha(opacity=80);
-  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
-  opacity: 0.8; */
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
+}
+
+.back-link {
+  z-index: 2;
+  position: absolute;
+  display: inline-flex;
+  color: #fff;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  left: 50px;
+  top: 50px;
+}
+
+.back-link svg {
+  width: 30px;
+  transition: margin-right 0.2s ease-in-out;
+}
+
+.back-link:hover svg {
+  margin-right: 5px;
 }
 
 main {
@@ -107,7 +137,21 @@ footer {
 img {
   max-width: 100%;
   display: block;
-  min-height: 100%;
+  height: 100%;
+}
+
+.background_image {
+  display: none;
+}
+
+.poster_image {
+  position: relative;
+  object-fit: contain;
+  max-height: 100%;
+  border: 0.3rem solid #fff;
+}
+.details_average_rating {
+  color: #e11;
 }
 
 @media screen and (min-width: 768px) {
@@ -119,8 +163,35 @@ img {
   .movie-card {
     max-width: 50%;
   }
+
   .movie-card:not(:last-child) {
     margin-bottom: 0;
+  }
+
+  .background_image {
+    position: relative;
+    width: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+    filter: brightness(60%);
+    display: block;
+  }
+
+  .poster_image {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(50px, -50%);
+  }
+
+  .details_text_wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: calc(20% + 75px);
+    width: 35rem;
   }
 }
 

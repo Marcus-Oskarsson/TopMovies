@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 
 import { API_URL } from "../reusables/urls";
 
+import BackButton from "../components/BackButton";
+
 const Details = () => {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const [movieDetails, setMovieDetails] = useState({});
@@ -21,7 +23,8 @@ const Details = () => {
   console.log(movieDetails);
 
   return (
-    <div>
+    <div className='details_background'>
+      <BackButton />
       <img
         src={`https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}`}
         alt={movieDetails.original_title}
@@ -32,10 +35,16 @@ const Details = () => {
         alt={movieDetails.original_title}
         className='poster_image'
       />
-
-      <h2>{movieDetails.original_title}</h2>
-      <p>{movieDetails.vote_average}</p>
-      <p>{movieDetails.overview}</p>
+      <div className='details_text_wrapper'>
+        <h2>{movieDetails.original_title}</h2>
+        <p>
+          Average rating:{" "}
+          <span className='details_average_rating'>
+            {movieDetails.vote_average}
+          </span>
+        </p>
+        <p>{movieDetails.overview}</p>
+      </div>
     </div>
   );
 };

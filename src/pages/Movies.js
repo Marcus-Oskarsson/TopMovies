@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { API_URL } from '../reusables/urls';
+import { API_URL } from "../reusables/urls";
 
-import Movie from '../components/Movie';
+import Movie from "../components/Movie";
 
 const Movies = () => {
-  const [movieList, setMovieList] = useState([]);
   const API_KEY = process.env.REACT_APP_API_KEY;
+  const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
     fetchMovies();
