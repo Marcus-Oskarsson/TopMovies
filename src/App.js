@@ -8,18 +8,18 @@ import Details from './pages/Details';
 import Movies from './pages/Movies';
 
 const App = () => (
-  <Router>
-    <Switch>
-      <Route path="/:id">
-        <Details />
-      </Route>
-      <Route path="/">
-        <Header />
-        <Movies />
-        <Footer />
-      </Route>
-    </Switch>
-  </Router>
+    <Router>
+        <Switch>
+            <Route path='/:id'>
+                <Details />
+            </Route>
+            <Route path='/'>
+                <Header />
+                <Movies />
+                <Footer />
+            </Route>
+        </Switch>
+    </Router>
 );
 
 export default App;

@@ -5,28 +5,28 @@ import { API_URL } from '../reusables/urls';
 import Movie from '../components/Movie';
 
 const Movies = () => {
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const [movieList, setMovieList] = useState([]);
+    const API_KEY = process.env.REACT_APP_API_KEY;
+    const [movieList, setMovieList] = useState([]);
 
-  const fetchMovies = async () => {
-    const response = await fetch(
-      `${API_URL}movie/popular?api_key=${API_KEY}`,
+    const fetchMovies = async () => {
+        const response = await fetch(
+            `${API_URL}movie/popular?api_key=${API_KEY}`
+        );
+        const movies = await response.json();
+        setMovieList(movies.results);
+    };
+
+    useEffect(() => {
+        fetchMovies();
+    }, []);
+
+    return (
+        <main>
+            {movieList.map((movie) => (
+                <Movie movie={movie} key={movie.id} />
+            ))}
+        </main>
     );
-    const movies = await response.json();
-    setMovieList(movies.results);
-  };
-
-  useEffect(() => {
-    fetchMovies();
-  }, [fetchMovies]);
-
-  return (
-    <main>
-      {movieList.map((movie) => (
-        <Movie movie={movie} key={movie.id} />
-      ))}
-    </main>
-  );
 };
 
 export default Movies;
