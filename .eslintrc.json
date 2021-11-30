@@ -1,15 +1,23 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+    "parser": "babel-eslint",
+    "extends": ["airbnb"],
+    "globals": {
+        "document": true,
+        "window": true,
+        "process": true
     },
-    "extends": ["plugin:react/recommended", "airbnb"],
+    "env": {
+        "node": true,
+        "browser": true
+    },
     "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2017,
         "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
+            "jsx": true,
+            "experimentalObjectRestSpread": true,
+            "modules": true
+        }
     },
     "plugins": ["react"],
     "rules": {
@@ -25,10 +33,15 @@
         ],
         "no-use-before-define": "off",
         "indent": "off",
-        "react/jsx-indent": "off",
-        "react/jsx-indent-props": "off",
         "jsx-quotes": ["error", "prefer-single"],
         "quotes": ["error", "single"],
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["error", "never"],
+        "react/jsx-indent": "off",
+        "react/jsx-indent-props": "off",
+        "react/jsx-no-bind": "error",
+        "react/jsx-uses-react": "warn",
+        "react/jsx-wrap-multilines": "off",
+        "react/jsx-one-expression-per-line": "off",
+        "react/jsx-props-no-spreading": "off"
     }
 }
