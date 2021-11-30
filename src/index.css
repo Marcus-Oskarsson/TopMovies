@@ -202,9 +202,13 @@ img {
     }
 
     /* hoover and focus */
+    a:hover {
+        cursor: pointer;
+    }
+
     a:hover img,
     a:focus img {
-        opacity: 30%;
+        opacity: 40%;
     }
 
     a:hover .movie-card-text-container,
