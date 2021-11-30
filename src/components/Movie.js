@@ -10,7 +10,7 @@ const Movie = ({ movie }) => (
         <div className='movie-card-text-container'>
             <h2>{movie.original_title}</h2>
             <p>
-                Released
+                {'Release date '}
                 <time>{movie.release_date}</time>
             </p>
         </div>

@@ -20,7 +20,8 @@ const Details = () => {
 
     useEffect(() => {
         fetchMovieDetails();
-    }, []);
+    }, [id]);
+    console.log(movieDetails);
 
     return (
         <div className='details_background'>
@@ -38,7 +39,7 @@ const Details = () => {
             <div className='details_text_wrapper'>
                 <h2>{movieDetails.original_title}</h2>
                 <p>
-                    Average rating:
+                    {'Average rating: '}
                     <span className='details_average_rating'>
                         {movieDetails.vote_average}
                     </span>
