@@ -26,11 +26,6 @@ body {
     background-color: #000;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-}
-
 /* Font families */
 h1,
 h2,
@@ -51,7 +46,9 @@ span {
 
 /* Font sizes and color */
 h1,
-h2 {
+h2,
+.hamburger-menu,
+.search-bar {
     font-size: 3rem;
     line-height: 1.4em;
     color: #fff;
@@ -61,7 +58,8 @@ p,
 a,
 footer,
 time,
-span {
+span,
+input {
     font-size: 1.6rem;
     line-height: 1.4em;
     color: #fff;
@@ -70,12 +68,35 @@ span {
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: static;
     width: 100%;
     padding: 3em;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
+}
+
+.search-bar:hover,
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
+.search-field {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0.5rem 1rem;
+    z-index: 1;
+    border: 2px solid #fff;
+    width: 25%;
+}
+
+.search-field:focus {
+    border: 2px solid greenyellow;
+}
+
+.blur {
+    background-color: red;
 }
 
 .back-link {
