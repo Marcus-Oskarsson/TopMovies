@@ -44,7 +44,6 @@ const Details = () => {
                         {movieDetails.vote_average}
                     </span>
                 </p>
-                <p>{movieDetails.overview}</p>
             </div>
         </div>
     );
