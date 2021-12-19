@@ -21,7 +21,6 @@ const Details = () => {
     useEffect(() => {
         fetchMovieDetails();
     }, [id]);
-    console.log(movieDetails);
 
     return (
         <div className='details_background'>
